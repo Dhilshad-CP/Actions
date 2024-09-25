@@ -1,0 +1,20 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # Change to your default branch if needed
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Use your self-hosted runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Notify EC2 to Pull Changes
+        run: |
+          # You can use a simple command to trigger the pull if needed
+          echo "Triggering pull on EC2 instance..."
+          # Optional: Insert any specific command or script you have
